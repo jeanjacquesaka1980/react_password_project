@@ -10,16 +10,13 @@ class Button extends React.Component {
     valueChar: ""
   };
 
-  handleClick = e => {
-    const valueChar = e.target.value;
+  handleClick = (id) => {
+
+    this.props.handleOnClick(id);
 
     this.setState({
       isClicked: !this.state.isClicked
     });
-
-    !this.state.isClicked
-      ? newValueChar.pop(valueChar)
-      : newValueChar.push(valueChar);
   };
 
   render() {
@@ -31,7 +28,7 @@ class Button extends React.Component {
       <>
         <button
           id={id}
-          onClick={this.handleClick}
+          onClick={() => this.handleClick(id)}
           value={value}
           type="button"
           className={isClicked}
