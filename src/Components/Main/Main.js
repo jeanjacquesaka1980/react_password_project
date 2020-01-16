@@ -20,9 +20,9 @@ class Main extends React.Component {
         <div className="col-3 my-1 mx-4">
           <Button
             handleOnClick={this.handleClick}
-            id={index}
-            value={el}
-            char={el}
+            id={el.id}
+            value={el.value}
+            char={el.value}
           />
         </div>
       );
@@ -34,34 +34,24 @@ class Main extends React.Component {
   }
 
   handleClick = id => {
-
     this.setState({
-        isActive: !this.state.isActive
-    })
-
-    // for (let i = 0; i < CHARS.length; i ++){
-    //     if (newCharsArr[i] === CHARS[i]){
-    //         newCharsArr.slice(1);
-    //     } else if (newCharsArr[i] !== CHARS[i]) {
-    //             newCharsArr.push(CHARS[i]);
-    //           }
-    // }
+      isActive: !this.state.isActive
+    });
 
     CHARS.forEach((obj, index) => {
-      if (newCharsArr.includes(obj)) {
-        console.log("got it !")
-        newCharsArr.slice(0, 1);
-
-      } else if (index === id) {
-        newCharsArr.push(obj);
-      }
+      if (obj.id === id) obj.active = !obj.active;
     });
-    console.log(newCharsArr);
   };
 
   render() {
+    // console.log(newCharsArr);
     return (
       <main className="container-fluid mx-auto text-center mainWrapper float-left">
+        <div className="row">
+          <div className="col-12">
+            <h2 className="my-3">CHOOSE SOME CHARACTERS</h2>
+          </div>
+        </div>
         <div className="row">{this.state.buttons}</div>
       </main>
     );

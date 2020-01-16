@@ -2,7 +2,7 @@ import React from "react";
 import "./Button.css";
 import "bootstrap/dist/css/bootstrap.css";
 
-const newValueChar = [];
+// const newValueChar = [];
 
 class Button extends React.Component {
   state = {
@@ -28,7 +28,6 @@ class Button extends React.Component {
       <>
         <button
           id={id}
-          active="false"
           onClick={() => this.handleClick(id)}
           value={value}
           type="button"

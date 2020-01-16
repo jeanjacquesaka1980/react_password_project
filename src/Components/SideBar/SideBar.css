@@ -1,5 +1,9 @@
 .sideBarWrapper {
     height: 780px;
     width: 35%;
+}
+
+.wrapperPassword {
     border: 5px solid #282c34;
+    height: 76px;
 }
