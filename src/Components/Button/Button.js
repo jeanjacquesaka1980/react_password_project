@@ -28,6 +28,7 @@ class Button extends React.Component {
       <>
         <button
           id={id}
+          active="false"
           onClick={() => this.handleClick(id)}
           value={value}
           type="button"
